@@ -1,6 +1,6 @@
 # SimpleNets
 
-[![Build Status](https://travis-ci.org/rgehring/SimpleNets.jl.png)](https://travis-ci.org/rgehring/SimpleNets.jl)
+[![Build Status](https://travis-ci.org/rgehring/SimpleNets.png)](https://travis-ci.org/rgehring/SimpleNets)
 
 What is it?
 --------
