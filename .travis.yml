@@ -13,4 +13,4 @@ before_install:
   - sudo apt-get update -qq -y
   - sudo apt-get install libpcre3-dev julia -y
 script:
-  - julia -e 'Pkg.init(); Pkg.clone(pwd()); Pkg.test("SimpleNets")'
+  - julia -e 'Pkg.init(); Pkg.clone("git@github.com:rgehring/SimpleNets.git"); Pkg.test("SimpleNets")'
