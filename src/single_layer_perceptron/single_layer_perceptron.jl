@@ -2,6 +2,8 @@ module SingleLayerPerceptron
   include( "../util/validations.jl" )
   HELP = "Single layer perceptron, offers a Perceptron type with train, score, and validate public methods"
   
+  invlogit(x) = 1 / (1 + exp(-x))
+  
   type Perceptron
     #public attributes
     activation_function::Function
@@ -18,7 +20,7 @@ module SingleLayerPerceptron
       return new(activation_function, bias, bias_term, weights, learning_rate )
     end
   end
-  Perceptron(n::Int64) = Perceptron( x -> (1/(1+exp(-x))) ,  0.0, true, fill!(Array(Float64, n), 1.0/n), 0.001 )
+  Perceptron(n::Int64) = Perceptron(invlogit, 0.0, true, fill!(Array(Float64, n), 1.0/n), 0.001 )
   
   # PUBLIC API IMPLEMENTATION 
   function score(nn::Perceptron, x::Array{Float64})
